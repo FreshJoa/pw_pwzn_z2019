@@ -1,4 +1,3 @@
-from builtins import id
 
 
 def counting_sort(values, _max, _min=0):
@@ -17,13 +16,17 @@ def counting_sort(values, _max, _min=0):
     :type _min: int
     :return:
     """
-    pass
+    list_size = _max - _min
+    counting_list = [0 for x in range(list_size)]
+    for value in values:
+        counting_list[value - _min] += 1
+
+    response_list = [index+_min for index, counting in enumerate(counting_list) for i in range(counting)]
+    return response_list
 
 
 if __name__ == '__main__':
-    # assert counting_sort(
-    #     [99, 4, 33, 2, 2, 1, 65, 3, 97, 53],
-    #     100,
-    # ) == [1, 2, 2, 3, 4, 33, 53, 65, 97, 99]
-    lista=[1, 2, 3]
-    print(id(lista))
+    assert counting_sort(
+        [99, 4, 33, 2, 2, 1, 65, 3, 97, 53],
+        100,
+    ) == [1, 2, 2, 3, 4, 33, 53, 65, 97, 99]

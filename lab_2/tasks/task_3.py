@@ -8,7 +8,11 @@ def unique(values):
     :return: Unique values in order of appear.
     :rtype: list
     """
-    pass
+    response_dict = {}
+    for value in values:
+        response_dict[value] = 1
+
+    return [*response_dict]
 
 
 if __name__ == "__main__":
