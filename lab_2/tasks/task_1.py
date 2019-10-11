@@ -1,3 +1,6 @@
+from builtins import id
+
+
 def counting_sort(values, _max, _min=0):
     """
     Function returns sorted list.
@@ -18,7 +21,9 @@ def counting_sort(values, _max, _min=0):
 
 
 if __name__ == '__main__':
-    assert counting_sort(
-        [99, 4, 33, 2, 2, 1, 65, 3, 97, 53],
-        100,
-    ) == [1, 2, 2, 3, 4, 33, 53, 65, 97, 99]
+    # assert counting_sort(
+    #     [99, 4, 33, 2, 2, 1, 65, 3, 97, 53],
+    #     100,
+    # ) == [1, 2, 2, 3, 4, 33, 53, 65, 97, 99]
+    lista=[1, 2, 3]
+    print(id(lista))
