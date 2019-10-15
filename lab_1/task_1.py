@@ -1,7 +1,7 @@
 def task_1():
     return ''
 
-
+print("Asia")
 assert task_1() == '''
 1
 22
