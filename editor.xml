@@ -3,4 +3,7 @@
     <option name="FONT_SIZE" value="13" />
     <option name="LINE_SPACING" value="1.1" />
   </component>
+  <component name="TodoConfiguration">
+    <pattern pattern="\b(todo|fixme)\b.*" />
+  </component>
 </application>
