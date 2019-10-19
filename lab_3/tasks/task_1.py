@@ -12,7 +12,8 @@ def parse_input(input):
     :return: list of parsed list of integers
     :rtype: list
     """
-    pass
+
+    return [list(map(int, line.split())) for line in input.split('\n') if line.strip() != '']
 
 
 if __name__ == '__main__':

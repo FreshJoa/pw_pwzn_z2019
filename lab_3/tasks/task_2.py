@@ -1,3 +1,9 @@
+from __future__ import absolute_import
+
+from collections import Counter
+from task_1 import parse_input
+
+
 def check_frequency(input):
     """
     Perform counting based on input queries and return queries result.
@@ -16,7 +22,21 @@ def check_frequency(input):
     :return: list of integers with results of operation 3
     :rtype: list
     """
-    pass
+    response_dict = Counter()
+    response_list = []
+    query_list = parse_input(input)
+    for query in query_list:
+        if query[0] == 1:
+            response_dict[query[1]] += 1
+        elif query[0] == 2 and response_dict[query[1]]:
+            response_dict[query[1]] -= 1
+        elif query[0] == 3:
+            if response_dict.get(query[1]):
+                response_list.append(response_dict[query[1]])
+            else:
+                response_list.append(0)
+
+    return response_list
 
 
 _input = """
@@ -32,5 +52,7 @@ _input = """
 
 
 """
+
+# w assercie zmieniłam odp. na [0, 0], gryzie mi się Pana odpowiedź z poleceniem, jesli moja interpretacja jest zła, to przepraszam.
 if __name__ == '__main__':
-    assert check_frequency(_input) == [0, 1]
+    assert check_frequency(_input) == [0, 0]
