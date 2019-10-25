@@ -14,7 +14,24 @@ class Calculator:
         # Podpowiedz: użyj atrybutu do przechowywania wyniku
         # ostatniej wykonanej operacji, tak by metoda memorize przypisywała
         # wynik zapisany w tym atrybucie
+
+        #short_memory uzywamy gdy uzytokonik nie podał argunetu i wykonujemy
+        #operacje z poprzednią wartością
+        #zasze zapamietuje ostatni wynik
         self._short_memory = None
+        self.operations_dict = {'+': self.__add__, }
+
+    def __add__(self, arg1, arg2):
+        return arg1 + arg2
+
+    def __sub__(self, arg1, arg2):
+        return arg1 - arg2
+
+    def __divmod__(self, arg1, arg2):
+        return arg1 /arg2
+
+
+
 
     def run(self, operator, arg1, arg2):
         """
@@ -29,6 +46,10 @@ class Calculator:
         :return: result of operation
         :rtype: float
         """
+        if self.operations_dict.get(operator):
+            return ()
+
+
         raise NotImplementedError
 
     def memorize(self):
