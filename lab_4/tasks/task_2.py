@@ -1,5 +1,15 @@
 import math
 
+
+def check_dim(dim1, dim2):
+    try:
+        if dim1 is not dim2:
+            raise ValueError
+        return True
+    except ValueError:
+        print("Niezgodność wymiarów")
+
+
 """
 Częśćć 1 (1 pkt): Uzupełnij klasę Vector tak by reprezentowała wielowymiarowy wektor.
 Klasa posiada przeładowane operatory równości, dodawania, odejmowania,
@@ -11,15 +21,6 @@ oraz metodę fabryki korzystającą z metody statycznej tworzącej nowy wektor
 z dwóch punktów.
 Wszystkie metody sprawdzają wymiar.
 """
-
-
-def check_dim(dim1, dim2):
-    try:
-        if dim1 is not dim2:
-            raise ValueError
-        return True
-    except ValueError:
-        print("Niezgodność wymiarów")
 
 
 class Vector:
@@ -55,22 +56,23 @@ class Vector:
         if isinstance(other, int) or isinstance(other, float):
             response_vector = [element * other for element in self.vector]
             return Vector(*response_vector)
-        else :
+        else:
             check_dim(self.dim, other.dim)
             response_int = 0
             for i in range(0, self.dim):
-                response_int += self.vector[i]*other.vector[i]
+                response_int += self.vector[i] * other.vector[i]
             return response_int
 
     def __len__(self):
+        return self.dim
+
+    @property
+    def len(self):
         response_len = 0.0
         for element in self.vector:
-            response_len += element**2
+            response_len += element ** 2
 
-        return int(math.sqrt(response_len))
-
-
-
+        return math.sqrt(response_len)
 
     @staticmethod
     def calculate_vector(beg, end):
@@ -91,9 +93,6 @@ class Vector:
 
         return tuple(response_points_list)
 
-
-
-
     @classmethod
     def from_points(cls, beg, end):
         """"""
@@ -108,19 +107,18 @@ class Vector:
         :rtype: tuple
         """
         vector = cls.calculate_vector(beg, end)
-        return Vector(*vector)
-
+        return cls(*vector)
 
 
 if __name__ == '__main__':
     v1 = Vector(1, 2, 3)
     v2 = Vector(1, 2, 3)
     assert v1 + v2 == Vector(2, 4, 6)
-    assert v1 - v2 == Vector(0,0,0)
-    assert v1 * 2 == Vector(2,4,6)
+    assert v1 - v2 == Vector(0, 0, 0)
+    assert v1 * 2 == Vector(2, 4, 6)
     assert v1 * v2 == 14
-    #Jak zrobić żeby len zwracało float??
-    assert len(Vector(3,4)) == 5
-
-    assert Vector.calculate_vector([0, 0, 0], [1,2,3]) == (1,2,3)
-    assert Vector.from_points([0, 0, 0], [1,2,3]) == Vector(1,2,3)
+    assert len(Vector(3, 4)) == 2
+    assert Vector(3, 4).dim == 2
+    assert Vector(3, 4).len == 5.
+    assert Vector.calculate_vector([0, 0, 0], [1, 2, 3]) == (1, 2, 3)
+    assert Vector.from_points([0, 0, 0], [1, 2, 3]) == Vector(1, 2, 3)

@@ -8,6 +8,15 @@ użyj wartość z pamięci kalkulatora. Obsłuż przypadki skrajne.
 """
 
 
+def check_arg2(dim1, dim2):
+    try:
+        if dim1 is not dim2:
+            raise ValueError
+        return True
+    except ValueError:
+        print("Niezgodność wymiarów")
+
+
 class Calculator:
     def __init__(self):
         self._memory = None
@@ -47,14 +56,21 @@ class Calculator:
         :rtype: float
         """
 
-        '''Obsługa przypadkøw wyjætkowych  - zwraca None'''
-        if self.operations_dict.get(operator):
-            if arg2 is None and self._short_memory is not None:
-                self._short_memory = self.operations_dict.get(operator)(arg1, self._short_memory)
-            elif arg2:
-                self._short_memory = self.operations_dict.get(operator)(arg1, arg2)
+        try:
+            if not self.operations_dict.get(operator):
+                raise ValueError
+            elif arg2 is None and self._short_memory is None:
+                raise ValueError
+            elif arg2 is None:
+                arg2 = self._short_memory
+            elif operator == '/' and not arg2:
+                raise ValueError
 
-        return self._short_memory
+            self._short_memory = self.operations_dict.get(operator)(arg1, arg2)
+            return self._short_memory
+
+        except ValueError:
+            print("Nie można wykonać diałania ")
 
     def memorize(self):
         self._memory = self._short_memory
@@ -70,8 +86,8 @@ class Calculator:
 
 if __name__ == '__main__':
     calc = Calculator()
-    b = calc.run('+', 1, 2)
     calc.memorize()
     calc.in_memory()
+    calc.run('*', 0, 1)
     c = calc.run('/', 9)
     assert c == 3
