@@ -5,6 +5,7 @@ from task_1 import parse_input
 
 
 def check_frequency(input):
+    
     """
     Perform counting based on input queries and return queries result.
 
