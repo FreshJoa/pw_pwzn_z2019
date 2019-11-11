@@ -234,6 +234,8 @@ class Square(Rectangle, Diamond):
     def f(self):
         return Diamond.f
 
+
+
     @e.setter
     def e(self, e):
         super(Square, self.__class__).e.fset(self, e)
