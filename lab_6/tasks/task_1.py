@@ -34,10 +34,58 @@ Otrzymuje się wtedy 2 pkt.
 UWAGA 2: Wszystkie jednoski masy występują w przykładzie.
 """
 from pathlib import Path
+from collections import defaultdict
+
+
+class NestedDict(dict):
+    def __getitem__(self, item):
+        try:
+            return dict.__getitem__(self, item)
+        except KeyError:
+            value = self[item] = type(self)()
+            return value
 
 
 def select_animals(input_path, output_path, compressed=False):
-    pass
+    with open(input_path, 'r') as reader_file:
+        headers = reader_file.readline()
+        mass_dict_kg = {'mg': 0.000001, 'g': 0.001, 'kg': 1, 'Mg': 1000}
+        animal_dict = NestedDict()
+
+        if compressed:
+            headers = 'uuid_gender_mass'
+            gender_dict = {'male': 'M', 'female': 'F'}
+            for line in reader_file:
+                row = line.strip().split(',')
+                mass = row[1].split()
+                mass_kg = float(mass[0]) * mass_dict_kg.get(mass[1])
+                animal_dict[row[2]][row[4]][mass_kg] = f"{row[0]}_{gender_dict.get(row[4])}_{format(mass_kg, '.3e')}"
+            with open(output_path, 'w') as writer_file:
+                writer_file.write(f"{headers}\n")
+                for key in sorted(animal_dict.keys()):
+                    min_fmale_mass_key = min(animal_dict[key]['female'].keys())
+                    writer_file.write(f"{animal_dict[key]['female'][min_fmale_mass_key]}\n")
+                    min_male_mass_key = min(animal_dict[key]['male'].keys())
+                    writer_file.write(f"{animal_dict[key]['male'][min_male_mass_key]}\n")
+
+        else:
+            for line in reader_file:
+                # print(line)
+                row = line.strip().split(',')
+                mass = row[1].split()
+                mass_kg = float(mass[0]) * mass_dict_kg.get(mass[1])
+                animal_dict[row[2]][row[4]][mass_kg] = line
+
+            with open(output_path, 'w') as writer_file:
+                writer_file.write(headers)
+                for key in sorted(animal_dict.keys()):
+                    min_fmale_mass_key = min(animal_dict[key]['female'].keys())
+                    writer_file.write(animal_dict[key]['female'][min_fmale_mass_key])
+                    min_male_mass_key = min(animal_dict[key]['male'].keys())
+                    writer_file.write(animal_dict[key]['male'][min_male_mass_key])
+
+        writer_file.close()
+        reader_file.close()
 
 
 if __name__ == '__main__':
