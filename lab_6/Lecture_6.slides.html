@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Lecture_1_part_2 slides</title>
+<title>Lecture_6 slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13202,35 +13202,158 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-w-zastosowaniach-naukowych">Python w zastosowaniach naukowych<a class="anchor-link" href="#Python-w-zastosowaniach-naukowych">&#182;</a></h1><h2 id="Wyk&#322;ad-1-cz.-2">Wyk&#322;ad 1 cz. 2<a class="anchor-link" href="#Wyk&#322;ad-1-cz.-2">&#182;</a></h2><h3 id="mgr-in&#380;.-Maciej-Kwiatkowski">mgr in&#380;. Maciej Kwiatkowski<a class="anchor-link" href="#mgr-in&#380;.-Maciej-Kwiatkowski">&#182;</a></h3>
+<h1 id="Python-w-zastosowaniach-naukowych">Python w zastosowaniach naukowych<a class="anchor-link" href="#Python-w-zastosowaniach-naukowych">&#182;</a></h1><h2 id="Wyk&#322;ad-6">Wyk&#322;ad 6<a class="anchor-link" href="#Wyk&#322;ad-6">&#182;</a></h2><h3 id="mgr-in&#380;.-Maciej-Kwiatkowski">mgr in&#380;. Maciej Kwiatkowski<a class="anchor-link" href="#mgr-in&#380;.-Maciej-Kwiatkowski">&#182;</a></h3>
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Repozytorium-kodu">Repozytorium kodu<a class="anchor-link" href="#Repozytorium-kodu">&#182;</a></h1>
+<h1 id="B&#322;edy-i-z&#322;e-praktyki-w-rozwi&#261;zaniach">B&#322;edy i z&#322;e praktyki w rozwi&#261;zaniach<a class="anchor-link" href="#B&#322;edy-i-z&#322;e-praktyki-w-rozwi&#261;zaniach">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Repozytorium (łac. repositorium) – miejsce uporządkowanego przechowywania dokumentów, z których wszystkie przeznaczone są do udostępniania.</p>
-</blockquote>
-<p>za: <a href="https://pl.wikipedia.org/wiki/Repozytorium">https://pl.wikipedia.org/wiki/Repozytorium</a></p>
+<ul>
+<li>falsey i truthy (głównie przy zerze),</li>
+<li>Nie trzeba przyrównywać bool do wartości,</li>
+<li>Można zwracać wartość wyrażenia logicznego niejawnie,</li>
+</ul>
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">not_none</span><span class="p">(</span><span class="n">elem</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">elem</span> <span class="k">if</span> <span class="n">elem</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">1</span>
+    <span class="c1"># nie: return elem or 1</span>
+    <span class="c1"># nie: </span>
+    <span class="c1"># is_none = elem is None</span>
+    <span class="c1"># elem if is_none == False else 1 </span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">not_none</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>W trakcie zajęć korzystać będziemy z repozytorium Git. Jeżeli jeszcze nie mamy go zainstalowanego to proszę o instalację: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
-<li>Jest to bezpłatny system kontroli wersji o otwartych źródłach (ang. version control system, VCS) działający zarówno lokalnie, jak i pozwalający na dzielenie się kodem.</li>
-<li>Platformą hostującą zdalne repozytorium będzie GitHub - proszę sobie tam założyć konto: <a href="https://github.com/">https://github.com/</a></li>
+<li>Stosowanie WET zamiast DRY (np. dodawania zwracania wyjątku w kilku miejscach),</li>
+<li>Nie stosowane PEP8 (odstępy, nazwy zmiennych, łamanie lini),</li>
 </ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Ponowne dziedziczenie,</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ParentError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">ChildError</span><span class="p">(</span><span class="n">ParentError</span><span class="p">):</span>  <span class="c1"># nie: class ChildError(ParentError, Exception)</span>
+    <span class="k">pass</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Zmiana nagłówka metody dziedziczonej.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+    
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="c1"># nie: def sum(a): </span>
+    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>zbędny setter i getter</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+    
+<span class="c1">#   # zbędne</span>
+<span class="c1">#     @property</span>
+<span class="c1">#     def a(self):</span>
+<span class="c1">#         return a</span>
+    
+<span class="c1">#     @a.setter</span>
+<span class="c1">#     def set_a(self, a):</span>
+<span class="c1">#         self.a = a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ogólnie zakładamy w Pythonie, że atrybuty są publiczne, a jeżeli chcemy je ukryć (zrobić zmienną "prywatną") to poprzedzamy nazwę pojedynczym podkreśleniem <code>_</code>.</p>
+<p>Zamiana atrybutu we własność ma sens dla wartości, których nie ma sensu przechowywać, gdyż ich wartość zmieni się ze zmianą innego atrybutu (np. pole kwadratu, jeżeli przechowujemy jego bok).</p>
+<p>Własność z wartością prywatną (np. <code>memory</code> w kalkulatorze) miało na celu zasugerowanie programiście korzystającemu z tego kodu, że wartość zachowana w pamięci nie powinna być łatwo zmienialna (np. można ją nadpisać przy korzystaniu z niej w równaniu).</p>
+<p>Dodanie settera i gettera powinno się pojawić jeżeli chcemy wykonać jakąś operację, przy ustawianiu tej wartości. W związku z tym setter dla boków kwadratu ma sens, ponieważ chcemy zachować interfejs z klasy prostokąt, ale także związanie boków. Setter i getter dla prostokąta nie był już potrzebny.</p>
 
 </div>
 </div>
@@ -13238,30 +13361,792 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Podstawowe komendy:</p>
+<h1 id="Operacje-na-plikach">Operacje na plikach<a class="anchor-link" href="#Operacje-na-plikach">&#182;</a></h1>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Odczyt/zapis-z-pliku">Odczyt/zapis z pliku<a class="anchor-link" href="#Odczyt/zapis-z-pliku">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Plik moża otworzyć za pomocą funkcji <code>open()</code> wywołanej z przynajmniej jednym parametrem - ścieżką do pliku. Ścieżka może być względna (domyślnie od ścieżka do uruchomienego interpretera) np. <code>file_1.txt</code> lub bezwględna (<code>/home/tutor/Documents/pw_labs/lab_6/file_1.txt</code>).</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+touch file_1.txt
+<span class="nb">echo</span> -e <span class="s2">&quot;Linia 0</span>
+<span class="s2">lina 1</span>
+<span class="s2">\t\tlinia 2: และ - kot(tajski)</span>
+<span class="s2">  &quot;</span> &gt; file_1.txt
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_1.txt&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Funkcja zwraca obiekt pliku (domyślnie w trybie czytania), z kursorem odczytu umiejscowionym na początku pliku.</p>
+<p>Zależnie od trybu otwarcia z pliku można czytać, pisać do niego lub robić obie te rzeczy równocześnie (sic!). Plik posiada również stan (otwarty/zamknięty), które określają czy możliwa jest interakcja z plikiem.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Położenie kursora:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>  <span class="c1"># określa położenie kursora w pliku</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Można czytać z pliku:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">readable</span><span class="p">())</span>  <span class="c1"># określa czy możliwy jest odczyt</span>
+<span class="c1"># odczyt linijki z pliku, znak końca linii dodawany jest do odczytanego stringa</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Linia 1: {file_.readline()}&#39;</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Położenie kursora:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Położenie kursora: 0
+Można czytać z pliku: True
+Linia 1: Linia 0
+
+Położenie kursora: 8
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Czy plik zamkniety:&quot;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>  <span class="c1"># stan pliku</span>
+<span class="n">file_</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># zamknięcie pliku</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Czy plik zamkniety:&quot;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file_</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>  <span class="c1"># czytanie z zamkniętego pliku podniesie błąd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Czy plik zamkniety: False
+Czy plik zamkniety: True
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">--------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                               Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-8-578b8ff31f6f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> file_<span class="ansi-blue-fg">.</span>close<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># zamknięcie pliku</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Czy plik zamkniety:&#34;</span><span class="ansi-blue-fg">,</span> file_<span class="ansi-blue-fg">.</span>closed<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>file_<span class="ansi-blue-fg">.</span>readline<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># czytanie z zamkniętego pliku podniesie błąd</span>
+
+<span class="ansi-red-fg">ValueError</span>: I/O operation on closed file.</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>UWAGA</strong> Ważne jest, żeby zawsze po skończeniu pracy z plikiem zamknąć go.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W związku z koniecznością "sprzątania po sobie" (zamykania plików) możliwe są dwa podejścia:</p>
 <ul>
-<li><code>git clone https://...</code> - skopiowanie (klonowanie) zdalnego repo lokalnie</li>
-<li><code>git init</code> - zainicjowanie nowego lokalnego repozytorium</li>
-<li><code>git pull</code> - pobranie zmian ze zdalnego repo</li>
-<li><code>git add</code> - dodanie plików do śledzenia przez repozytorium</li>
-<li><code>git commit</code> - utworzenie wpisu w repozytorium</li>
-<li><code>git push</code> - wysłanie wpisu na zdalne repo</li>
-<li><code>git status</code> - sprawdzenie stanu repozytorium</li>
-<li><code>git log</code> - podgląd repozytorium</li>
+<li>otwieranie pliku w trybie z obsługą wyjątków</li>
 </ul>
 
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_1.txt&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">file_content</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">file_</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">file_</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="n">file_</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">file_</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">--------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">UnsupportedOperation</span>                     Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-10-540eafb45852&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     file_content <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>file_<span class="ansi-blue-fg">.</span>readlines<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     a <span class="ansi-blue-fg">=</span> file_<span class="ansi-blue-fg">.</span>readline<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     </span>file_<span class="ansi-blue-fg">.</span>write<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span>     file_<span class="ansi-blue-fg">.</span>close<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">UnsupportedOperation</span>: not writable</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zawartość pliku:&#39;</span><span class="p">,</span> <span class="n">file_content</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Zmienna a: &quot;</span><span class="si">{a}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Czy plik zamkniety:&quot;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Zawartość pliku: [&#39;Linia 0\n&#39;, &#39;lina 1\n&#39;, &#39;\t\tlinia 2: และ - kot(tajski)\n&#39;, &#39;  \n&#39;]
+Zmienna a: &#34;&#34;
+Czy plik zamkniety: True
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>otwieranie za pomocą menadżera kontekstu - przez wyrażenie <code>with</code> (podejście wygodniejsze)</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_1.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_</span><span class="p">:</span>
+    <span class="n">file_content</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">file_</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">file_</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="n">file_</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">--------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">UnsupportedOperation</span>                     Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-12-748ad1a5d4c2&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     file_content <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>file_<span class="ansi-blue-fg">.</span>readlines<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     a <span class="ansi-blue-fg">=</span> file_<span class="ansi-blue-fg">.</span>readline<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg">     </span>file_<span class="ansi-blue-fg">.</span>write<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">UnsupportedOperation</span>: not writable</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zawartość pliku:&#39;</span><span class="p">,</span> <span class="n">file_content</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zmienna a:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Czy plik zamkniety:&quot;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Zawartość pliku: [&#39;Linia 0\n&#39;, &#39;lina 1\n&#39;, &#39;\t\tlinia 2: และ - kot(tajski)\n&#39;, &#39;  \n&#39;]
+Zmienna a: 
+Czy plik zamkniety: True
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Tryby-odczytu">Tryby odczytu<a class="anchor-link" href="#Tryby-odczytu">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>r</code> - odczyt z pliku (pod warunkiem, że plik istnieje)</li>
+<li><code>w</code> - zapis do pliku (tworzy plik o ile nie istnieje)</li>
+<li><code>a</code> - zapis do pliku (kursor ustawiony na końcu pliku)</li>
+<li><code>+</code> - dodanie przeciwstawnej opcji (<code>r+</code> różni się od <code>w+</code> tym że nie tworzy pliku)</li>
+<li><code>x</code> - stwórz plik i otwórz w trybie zapisu (podnosi wyjątek, jeżeli plik istnieje)</li>
+<li><code>b</code> - otwórz w trybie binarnym</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># odczyt z domyślnym kodowaniem</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Położenie kursora:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
+    <span class="n">file_</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file_</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Położenie kursora:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Położenie kursora: 53
+แล
+Położenie kursora: 32
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># odczyt w bajtach</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a+b&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Położenie kursora:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
+    <span class="n">file_</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>
+    <span class="n">char</span> <span class="o">=</span> <span class="n">file_</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Położenie kursora:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Położenie kursora: 53
+b&#39;\xe0\xb9\x81&#39; แ
+Położenie kursora: 29
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Modu&#322;y-wspieraj&#261;ce-czytanie-danych">Modu&#322;y wspieraj&#261;ce czytanie danych<a class="anchor-link" href="#Modu&#322;y-wspieraj&#261;ce-czytanie-danych">&#182;</a></h1>
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Do samodzielnej nauki:</p>
+<h1 id="csv---dane-o-strukturze-tabelarycznej"><code>csv</code> - dane o strukturze tabelarycznej<a class="anchor-link" href="#csv---dane-o-strukturze-tabelarycznej">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Dane o strukturze tabelarycznej to dane o strukturze "takiej jak w Excelu" lub bazie danych tzn.</p>
 <ul>
-<li>Tutorial GitHuba: <a href="https://guides.github.com/introduction/git-handbook/">https://guides.github.com/introduction/git-handbook/</a></li>
-<li>Dokumentacja, video, książka Git Pro: <a href="https://git-scm.com/doc">https://git-scm.com/doc</a></li>
-<li>Książka w wersji polskiej (1 edycja): <a href="https://git-scm.com/book/pl/v1">https://git-scm.com/book/pl/v1</a></li>
-<li>Online tutorial z częsci komend:<a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></li>
+<li>są pogrupowane w kolumny,</li>
+<li>są spójne co do typu wewnątrz kolumny,</li>
+<li>kolumny mogą posiadać nagłówek.</li>
+</ul>
+<p>Kolumnę rozróżnia się za pomocą znaku przystankowego (<em>delimiter</em>). Jeżeli znak przystankowy lub inny znak specjalny ma być użyty w kolumnie, kolumna powinna być zapisana jako ciąg znaków ograniczonych znakiem cytowania (<em>quotechar</em>).</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tak naprawdę jest to lekkie nadużycie, gdyż rozszerzenie <code>.csv</code> odnosi się do do <em>comma separated value</em>, tak więc znakiem przystankowym powinien być przecinek. Istnieje jeszcze rozszerzenie <code>.tsv</code> odnoszące się do plików separowanych tabulacją.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Moduł csv dostarcza przede wszytkim 4 obiekty:</p>
+<ul>
+<li><code>reader</code> - czytania z pliku,</li>
+<li><code>writer</code> - pisanie do pliku,</li>
+<li><code>DictReader</code> - czytanie do słownika,</li>
+<li><code>DictWriter</code> - pisanie ze słownika.</li>
+</ul>
+<p>Obiekty te przyjmują jako pierwszy parametr obiekt pliku (ważne jest, żeby plik był otworzony w odpowiednim trybie) oraz parametry definiujące strukturę pliku (np. <code>delimiter</code> i <code>quotechar</code>). Więcej info w dokumentacji: <a href="https://docs.python.org/3.7/library/csv.html">https://docs.python.org/3.7/library/csv.html</a></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv_test_1.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">_file</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">cat</span> csv_test_1.csv
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv_test_1.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">_file</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;0&#39;, &#39;a&#39;, &#39;,&#39;]
+[&#39;1&#39;, &#39;b&#39;, &#39;,&#39;]
+[&#39;2&#39;, &#39;c&#39;, &#39;,&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv_test_1.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">_file</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;0&#39;, &#39;a&#39;, &#39;*&#39;, &#39;*&#39;]
+[&#39;1&#39;, &#39;b&#39;, &#39;*&#39;, &#39;*&#39;]
+[&#39;2&#39;, &#39;c&#39;, &#39;*&#39;, &#39;*&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv_test_1.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">_file</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span>
+        <span class="n">_file</span><span class="p">,</span> <span class="n">fieldnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;letter&#39;</span><span class="p">,</span> <span class="s1">&#39;comment&#39;</span><span class="p">],</span>
+        <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;*&#39;</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>OrderedDict([(&#39;number&#39;, &#39;0&#39;), (&#39;letter&#39;, &#39;a&#39;), (&#39;comment&#39;, &#39;,&#39;)])
+OrderedDict([(&#39;number&#39;, &#39;1&#39;), (&#39;letter&#39;, &#39;b&#39;), (&#39;comment&#39;, &#39;,&#39;)])
+OrderedDict([(&#39;number&#39;, &#39;2&#39;), (&#39;letter&#39;, &#39;c&#39;), (&#39;comment&#39;, &#39;,&#39;)])
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv_test_1.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">_file</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span>
+        <span class="n">_file</span><span class="p">,</span> <span class="n">fieldnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;letter&#39;</span><span class="p">],</span>
+        <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>OrderedDict([(&#39;number&#39;, &#39;0&#39;), (&#39;letter&#39;, &#39;a&#39;), (None, [&#39;*&#39;, &#39;*&#39;])])
+OrderedDict([(&#39;number&#39;, &#39;1&#39;), (&#39;letter&#39;, &#39;b&#39;), (None, [&#39;*&#39;, &#39;*&#39;])])
+OrderedDict([(&#39;number&#39;, &#39;2&#39;), (&#39;letter&#39;, &#39;c&#39;), (None, [&#39;*&#39;, &#39;*&#39;])])
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="json-standard-komunikacji-obiektowej"><code>json</code> standard komunikacji obiektowej<a class="anchor-link" href="#json-standard-komunikacji-obiektowej">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>json</code> czyli <em>JavaScript Object Notation</em> to lekki (nie zawierający żadnych metadanych) format zapisu danych o strukturze obiektu (klucz-wartość), którego główną zaletą jest jego czytelność (<em>human-readable</em>). Świadczyć może o tym fakt, że w znacznym stopniu wyparł wcześniej stosowany w komunikacji sieciowej <code>xml</code> (<em>eXtensible Markup Language</em>).</p>
+<p>Zasady konstrukcji poprawnego jsona są opisane tu: <a href="http://json.org/">http://json.org/</a></p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ogólnie polecam go do zapisu obiektów (np. konfiguracji, parametrów), lub formatowania złożonych słowników (przy debuggowaniu).</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Moduł zawiera metody do zapisu i odczytu w dwóch wersjach:</p>
+<ul>
+<li>odczyt <code>load</code> (z obiektu pliku) i <code>loads</code> (ze stringa),</li>
+<li>zapis <code>dump</code> (do obiektu pliku) i <code>dumps</code> (do stringa).</li>
+</ul>
+<p>Dokumentacja: <a href="https://docs.python.org/3.7/library/json.html">https://docs.python.org/3.7/library/json.html</a></p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>OrderedDict([(&#39;number&#39;, &#39;2&#39;), (&#39;letter&#39;, &#39;c&#39;), (None, [&#39;*&#39;, &#39;*&#39;])])
+{
+    &#34;number&#34;: &#34;2&#34;,
+    &#34;letter&#34;: &#34;c&#34;,
+    &#34;null&#34;: [
+        &#34;*&#34;,
+        &#34;*&#34;
+    ]
+}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Inne moduły przydatne przy pracy na plikach:</p>
+<ul>
+<li><code>os.path</code> - operacje systemu operacyjnego na plikach, definiowanie ścieżek etc.</li>
+<li><code>shutil</code> - kopiowanie plików i folderów</li>
+<li><code>pathlib</code> - łączy cechy dwóch powyższych w przyjemnej składni (niezależnej od OS)</li>
+<li><code>tempdir</code> - pliki i foldery tymczasowe</li>
 </ul>
 
 </div>
@@ -13270,40 +14155,929 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Na pierwszych zajęciach:</p>
-<ul>
-<li>forkujemy repo: <a href="https://github.com/sucharinio/pw_pwzn_z2019">https://github.com/sucharinio/pw_pwzn_z2019</a> (czyli tworzymy własną zdalną kopię repozytorium)</li>
-<li>clonujemy repo (czyli ściągamy je lokalnie)</li>
-<li>ustawiamy dane edytora:
-<pre><code>$ git config --global user.name "Jan Nowak"
-$ git config --global user.email jannowak@example.com</code></pre>
-</li>
-</ul>
-
+<h1 id="Wyra&#380;enia-regularne">Wyra&#380;enia regularne<a class="anchor-link" href="#Wyra&#380;enia-regularne">&#182;</a></h1>
 </div>
 </div>
-</div></section></section><section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Na każdych zajęciach:</p>
+<p>Wyrażenia regularne (<em>Regular Expresions</em>, <em>RegEx</em>, <em>RegExp</em>) pozwalają na wyszukiwanie podciągów w ciągu znaków, które spełniają określone zależności. Przydatne przy np.:</p>
 <ul>
-<li>(opcjonalnie) przechodzimy na branch do którego chcemy domergować nowe zadania.<br/>
-<code>$ git checkout master</code></li>
-<li>Ściągamy zmiany ze zdalnego repozytorium:<br/>
-<code>$ git pull https://github.com/sucharinio/pw_pwzn_z2019.git master</code></li>
-<li>Rozwiązujemy potencjalne konflikty i mergujemy zmiany.</li>
-<li>Rozwiązujemy zadania, zapisujemy zmiany.<br/>
-<pre><code>git add .
-git commmit -m "Solution lab n."</code></pre>
-</li>
-<li>Updatujemy swoje zdalne repo o zmiany:<br/>
-<code>$ git push origin master</code></li>
+<li>szukaniu w tekście,</li>
+<li>zastępowaniu powtarzalnych fragmentów,</li>
+<li>parsowaniu stringów pochodzących od użytkownika lub stringów o określonej strukturze (np kod pocztowy).</li>
 </ul>
 
 </div>
 </div>
-</div></section></section>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wyrażenia regularne mogą zachować się "zbyt" zachłannie (źle sformatowane zapytanie może zacząć analizować cały string) zalecane jest używanie ich na względnie krótkich stringach, albo użycie ich ograniczyć do minimum (dzielić tekst na mniejsze fragmenty, używać regexów jako ostatniego filtra).</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W Pythonie za obsługę wyrażeń regularnych odpowiada moduł <code>re</code> (<a href="https://docs.python.org/3.7/library/re.html">https://docs.python.org/3.7/library/re.html</a>).</p>
+<p>Na chwilę obecną skorzystamy tylko z jednej funckji <code>search</code> szukającej pierwszego dopasowania zadanego wyrażenia.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wyrażeniem regularnym może być pojedynczy znak z wyjątkiem następujących znaków: <code>\.|[]{}ˆ$*+?</code>. 
+W przypadku chęcia użycia tych znaków konieczne jest ich wyescapowanie.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Ala ma kota,</span>
+<span class="s1">kot ma drzemkę :\ </span>
+<span class="s1">Ela ma psa...</span>
+<span class="s1">mama ma z nimi dramat&#39;&#39;&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;\.&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;re.Match object; span=(2, 3), match=&#39;a&#39;&gt;
+&lt;re.Match object; span=(42, 43), match=&#39;.&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>UWAGA</strong>: Problem może pojawić się w przypadku próby wyszukania znaku <code>\</code> (backslash). Problem ten wynika z faktu, że Python również używa go do esacpowania znaków specjalnych. Dlatego w przypadku regexów lepiej używać raw-stringów (<code>r''</code>).</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Ala ma kota,</span>
+<span class="s1">kot ma drzemkę :\ </span>
+<span class="s1">Ela ma psa...</span>
+<span class="s1">mama ma z nimi dramat&#39;&#39;&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;re.Match object; span=(29, 30), match=&#39;\\&#39;&gt;
+&lt;re.Match object; span=(29, 30), match=&#39;\\&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Domyślnie wyszukiwanie jest czułe na wielkość znaku. Opcję tę można wyłączyć ustawiając w zapytaniu odpowiednią flagę.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;re.Match object; span=(0, 1), match=&#39;A&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Możliwe jest wyszukanie wszytkich pasujących podciągów za pomocą funkcji <code>findall()</code>.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Case sensitive: &#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Case insensitive: &#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Case sensitive:  [&#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;]
+Case insensitive:  [&#39;A&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Jeżeli chcemy uzyskać iterablę obiektów <code>Match</code> można użyć funkcję <code>finditer()</code>.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Case sensitive match objects: &#39;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Case sensitive match objects:  [&lt;re.Match object; span=(2, 3), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(5, 6), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(10, 11), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(18, 19), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(34, 35), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(37, 38), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(41, 42), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(47, 48), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(49, 50), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(52, 53), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(63, 64), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(65, 66), match=&#39;a&#39;&gt;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wyrażenie może zaweierać więcej niż jeden znak a część z nich może być podana nie bezpośrednio.</p>
+<p>Można to zrealizować za pomocą:</p>
+<ul>
+<li><code>.</code> - zastępującej jeden dowolny znak</li>
+<li><code>\w</code> - zakresu znaków (w tym przypadku wszystkich liter)</li>
+<li><code>[abc]</code> - podaniem zbioru znaków</li>
+<li><code>&lt;re1&gt;|&lt;re2&gt;</code> - podania dwóch opcjonalnych regexów połączonych znakiem <code>|</code> (pipe)</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kropka: &#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.la&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pipe: &#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;Ela|Ala&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zbiór: &#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[EA]la&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zakres: &#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;\wla&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Kropka:  [&#39;Ala&#39;, &#39;Ela&#39;]
+Pipe:  [&#39;Ala&#39;, &#39;Ela&#39;]
+Zbiór:  [&#39;Ala&#39;, &#39;Ela&#39;]
+Zakres:  [&#39;Ala&#39;, &#39;Ela&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W przypadku definiowania zbioru znaków <code>[]</code> wszytkie znaki specjalne są traktowane jako znaki z wyjątkiem:</p>
+<ul>
+<li><code>\</code>, który wciąż służy do escapowania znaków,</li>
+<li><code>-</code>, który umieszczony pomiędzy dwoma znakami oznacza zakres</li>
+<li><code>^</code>, który umieszczony na początku oznacza negację</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;[0-5][0-9]&#39;</span><span class="p">,</span> <span class="s1">&#39;72&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;[A-Z]&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;[a\-z]&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>None
+None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Zdefiniowane zakresy znaków znaków:</p>
+<ul>
+<li><code>\d</code>/<code>\D</code> - cyfry dziesiętne / niecyfry</li>
+<li><code>\s</code>/<code>\S</code> - znaki białe (<code>\t\n\r\f \v</code> i inne np. twarde spacje) / niebiałe znaki</li>
+<li><code>\w</code>/<code>\W</code> - znaki słów (<code>a-zA-Z0-9_</code>) / inne znaki niż znaki słów</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>[0-9]</code> odpowiada <code>\d</code></li>
+<li><code>[ \t\n\r\f\v]</code> odpowiada <code>\s</code></li>
+<li><code>[a-zA-Z0-9]</code> odpowiada <code>\w</code></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;\w\w\d&#39;</span><span class="p">,</span> <span class="s1">&#39;a_2&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;\w\w\w&#39;</span><span class="p">,</span> <span class="s1">&#39;007&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;re.Match object; span=(0, 3), match=&#39;a_2&#39;&gt;
+&lt;re.Match object; span=(0, 3), match=&#39;007&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W celu określenia liczby wystąpień znaku służy:</p>
+<ul>
+<li><code>?</code> - występuje 0 lub 1 raz</li>
+<li><code>*</code> - występuje 0 lub więcej razy</li>
+<li><code>+</code> - występuje przynajmniej raz</li>
+<li><code>{m,n}</code> - występuje od minimum m do maksimum n razy</li>
+<li><code>{m,}</code> - występuje przynajmniej m razy</li>
+<li><code>{,n}</code> - występuje nie więcej niż n razy</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{msg:&lt;15}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">msg</span><span class="p">)))</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39; *c?o+mbo&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{pattern}</span><span class="s1">:&#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;combo&#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;combo &#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;cooombo&#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;oombo&#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">combo&#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;  combo&#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;  cmbo&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> *c?o+mbo:
+combo           True
+combo           False
+cooombo         True
+oombo           True
+	combo          False
+  combo         True
+  cmbo          False
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>??</code>, <code>+?</code>, <code>*?</code> - niechciwe wersje operatorów</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&lt;a&gt; b &lt;c&gt;&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;message:&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;&lt;.*&gt;&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>message: &lt;a&gt; b &lt;c&gt;
+&lt;a&gt; b &lt;c&gt;
+&lt;a&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W wyrażeniu regularnym możemy określić położenie względem początku całego ciągu, linii lub słowa:</p>
+<ul>
+<li><code>^</code> - określa początek stringa (lub linii w trybie wielolinijkowym)</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_findall</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">))</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Ala ma kota,</span>
+<span class="s1">kot ma drzemkę :\ </span>
+<span class="s1">Ela ma psa...</span>
+<span class="s1">mama ma z nimi dramat&#39;&#39;&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^.la&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^.la&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>^.la : [&#39;Ala&#39;]
+^.la : [&#39;Ala&#39;, &#39;Ela&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>$</code> - określa koniec stringa (lub linii w trybie wielolinijkowym)</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;ma+ .+$&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;ma+ .+$&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ma+ .+$ : [&#39;ma ma z nimi dramat&#39;]
+ma+ .+$ : [&#39;ma kota,&#39;, &#39;ma drzemkę :\\ &#39;, &#39;ma psa...&#39;, &#39;ma ma z nimi dramat&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>\b</code> - określa początek/koniec słowa</li>
+<li><code>\B</code> - określa środek słowa</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Ala ma kota,</span>
+<span class="s1">kot ma drzemkę :\ </span>
+<span class="s1">Ela ma psa...</span>
+<span class="s1">mama ma z nimi dramat&#39;&#39;&#39;</span>
+
+<span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;ma&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\bma\b&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;ma\B&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\bma\B&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ma : [&#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;]
+\bma\b : [&#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;]
+ma\B : [&#39;ma&#39;, &#39;ma&#39;]
+\bma\B : [&#39;ma&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Grupy">Grupy<a class="anchor-link" href="#Grupy">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ostatnim elementem w wyrażeniach regularnych są grupy <code>()</code>. Pozwlają one na grupowanie elementów wyrażenia (sic!), ale również odnosić się do określonej grupy w wyrażeniu lub w uzskanym dopasowaniu.</p>
+<ul>
+<li><code>(...)</code> - zwykła grupa, ciąg dopasowany do <code>...</code> jest dostępny po numerze (od 1)</li>
+<li><code>(?:...)</code> - grupa nie wychwytująca - ogranicza wyrażenie, ale nie jest dodawana do numeracji</li>
+<li><code>(?#...)</code> - komentarz, ignorowany</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(ab)(\w*)(?#jakie literki złapię?)(?:d)&#39;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s1">&#39;abcd&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupy: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupa 0: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># całe dopasowane wyrażenie</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupa 1: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupa 2: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>grupy:  (&#39;ab&#39;, &#39;c&#39;)
+grupa 0:  abcd
+grupa 1:  ab
+grupa 2:  c
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(?P&lt;name&gt;...)</code> - nazwana grupa - grupa poza numeracją otrzymuje jeszcze nazwę <code>name</code></li>
+<li><code>(?P=name)</code> - odwołanie do grupy o nazwie</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?P&lt;quote&gt;[</span><span class="se">\&#39;</span><span class="s1">&quot;])(?P&lt;name&gt;[A-Za-z ]*?)(?P=quote)&#39;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s1">&#39;Robert &quot;Uncle Bob&quot; Martin&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupy: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupa 0: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupa 1: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupa 2: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;słownik grup&#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>grupy:  (&#39;&#34;&#39;, &#39;Uncle Bob&#39;)
+grupa 0:  &#34;Uncle Bob&#34;
+grupa 1:  &#34;
+grupa 2:  Uncle Bob
+słownik grup {&#39;quote&#39;: &#39;&#34;&#39;, &#39;name&#39;: &#39;Uncle Bob&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(?=...)</code> - po wcześniejszym wyrażeniu musi następować wyrażenie <code>...</code></li>
+<li><code>(?!...)</code> - po wcześniejszym wyrażeniu nie może następować wyrażenie <code>...</code></li>
+<li><code>(?&lt;=...)</code> - następujące wyrażenie musi być poprzedzone wyrażeniem <code>...</code></li>
+<li><code>(?&lt;!...)</code> - następujące wyrażenie nie może być poprzedzone wyrażeniem <code>...</code></li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;(?&lt;=abc)def&#39;</span><span class="p">,</span> <span class="s1">&#39;abcdef&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[42]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;re.Match object; span=(3, 6), match=&#39;def&#39;&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(?(id/&lt;name&gt;)yes-re|no-re)</code> - jeżeli grupa o id <code>id</code> lub nazwie <code>name</code> występuje sprawdź wyrażenie <code>yes_re</code> jeżeli nie, dopasuj wyrażenie <code>no-re</code> (jeżeli jest zdefiniowane)</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">email_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(\w+@\w+(?:\.\w+)+)&#39;</span>
+<span class="n">regex</span> <span class="o">=</span> <span class="n">rf</span><span class="s1">&#39;(&lt;)?</span><span class="si">{email_regex}</span><span class="s1">(?(1)&gt;|$)&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s2">&quot;&lt;user@host.com&gt;&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s2">&quot;user@host.com&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s2">&quot;&lt;user@host.com&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s2">&quot;user@host.com&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;re.Match object; span=(0, 15), match=&#39;&lt;user@host.com&gt;&#39;&gt;
+&lt;re.Match object; span=(0, 13), match=&#39;user@host.com&#39;&gt;
+None
+None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section>
 </div>
 </div>
 
