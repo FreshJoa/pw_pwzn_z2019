@@ -56,7 +56,6 @@ if __name__ == '__main__':
         [False, False, False,  True, False, False],
         [False,  True,  True,  True, False,  True]
     ])
-    print(iterate(_board))
     assert (calculate_neighbours(_board) == np.array([
         [1, 2, 2, 1, 3, 1,],
         [2, 4, 3, 4, 6, 3,],
@@ -66,11 +65,11 @@ if __name__ == '__main__':
         [1, 1, 3, 2, 3, 0,],
     ])).all()
     assert (iterate(_board) == np.array([
-        [False, False, False, False,  True, False],
+        [False, False, False, False, True, False],
         [ True, False,  True, False, False,  True],
         [ True, False, False,  True, False,  True],
-        [ True,  True, False, False, False,  True],
+        [True,  True, False, False, False,  True],
         [False, False, False,  True, False, False],
-        [False, False,  True,  True,  True, False],
+        [False, False,  True,  True, True, False],
     ])).all()
 
