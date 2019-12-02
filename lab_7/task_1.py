@@ -17,7 +17,12 @@ def least_sq(xy):
     :type xy: np.ndarray
     :return: Tuple of fitted parameters
     """
-    pass
+    N = xy.size/2
+    Delta = N* np.sum(xy[0]**2) - sum(xy[0])**2
+    A = (np.sum(xy[0]**2) * np.sum(xy[1]) - np.sum(xy[0]) * np.sum(xy[0]*xy[1]))/Delta
+    B = (N * np.sum(xy[0]*xy[1]) - np.sum(xy[0])*np.sum(xy[1]))/Delta
+
+    return np.around(A, 1), np.around(B, 1)
 
 
 if __name__ == '__main__':
@@ -221,4 +226,5 @@ if __name__ == '__main__':
                         98.00343145869182,
                         98.9982680433363,
                         100.00083927400149]])
-    np.testing.assert_allclose(least_sq(points), (1, -1), atol=0.1)
+
+    np.testing.assert_allclose(least_sq(points), (1, 1), atol=0.1)
