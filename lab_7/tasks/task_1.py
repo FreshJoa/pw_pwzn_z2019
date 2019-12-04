@@ -17,6 +17,7 @@ def least_sq(xy):
     :type xy: np.ndarray
     :return: Tuple of fitted parameters
     """
+    
     N = xy.size/2
     Delta = N* np.sum(xy[0]**2) - sum(xy[0])**2
     A = (np.sum(xy[0]**2) * np.sum(xy[1]) - np.sum(xy[0]) * np.sum(xy[0]*xy[1]))/Delta
