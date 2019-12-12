@@ -20,8 +20,8 @@ def least_sq(xy):
 
     N = xy.size/2
     Delta = N* np.sum(xy[0]**2) - sum(xy[0])**2
-    A = (np.sum(xy[0]**2) * np.sum(xy[1]) - np.sum(xy[0]) * np.sum(xy[0]*xy[1]))/Delta
-    B = (N * np.sum(xy[0]*xy[1]) - np.sum(xy[0])*np.sum(xy[1]))/Delta
+    B = (np.sum(xy[0]**2) * np.sum(xy[1]) - np.sum(xy[0]) * np.sum(xy[0]*xy[1]))/Delta
+    A = (N * np.sum(xy[0]*xy[1]) - np.sum(xy[0])*np.sum(xy[1]))/Delta
 
     return np.around(A, 1), np.around(B, 1)
 

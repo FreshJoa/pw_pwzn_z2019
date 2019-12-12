@@ -1,0 +1,54 @@
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.3.0
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+Praca domowa 8
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from tools.fit_funcs import least_sq 
+
+
+
+data = np.loadtxt('data/input01.txt', delimiter=",", skiprows=1)
+
+a_b_all = least_sq(np.array([data[:,0], data[:,1]]))
+
+error_y = np.abs(data[:,2]/data[:,1])
+data_to_fit = data[np.where(error_y < 0.05)]
+
+a_b_fitted_data = least_sq(np.array([data_to_fit[:,0], data_to_fit[:,1]]))
+
+fitted_y =a_b_fitted_data[0] * data_to_fit[:,0] + a_b_fitted_data[1]
+fitted_y_all = a_b_all[0] * data[:,0] + a_b_all[1]
+
+
+fig = plt.figure(figsize=(15,10))
+
+plt.errorbar(data[:,0], data[:,1], yerr= data[:,2], color = "red", ecolor='red', fmt ='^')
+plt.errorbar(data_to_fit[:,0], data_to_fit[:,1], yerr= data_to_fit[:,2],color="black", ecolor='black', fmt = 's' )
+plt.plot(data_to_fit[:,0], fitted_y,  color = "green", linestyle='--', label ='\u0394 5%')
+plt.plot(data[:,0], fitted_y_all, color = "blue", linestyle='--', label = 'all')
+plt.legend(loc= "upper left", fontsize =15)
+plt.xticks(fontsize=15)
+plt.yticks(fontsize=15)
+plt.show()
+
+```
+
+```{python}
+
+fig.savefig('fitted_input01.png', dpi=200)
+
+```
