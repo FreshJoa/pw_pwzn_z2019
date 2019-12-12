@@ -1,11 +1,11 @@
 
 Twrzenie środowiska wirtualnego:
 
-python3 -m venv <nazwa>
+python3 -m venv venv_name
 
 Aktywacja środowiska wirtualnego:
 
-source <nazwa>/bin/activate
+source venv_name/bin/activate
 
 Instalacja requirements:
 
