@@ -7,7 +7,7 @@ Aktywacja środowiska wirtualnego:
 
 source venv_name/bin/activate
 
-Instalacja requirements:
+Instalacja requirements (w folderze gdzie plik się znajduje):
 
 pip install –r requirements.txt
 
