@@ -34,15 +34,14 @@ fitted_y =a_b_fitted_data[0] * data_to_fit[:,0] + a_b_fitted_data[1]
 fitted_y_all = a_b_all[0] * data[:,0] + a_b_all[1]
 
 
-fig = plt.figure(figsize=(15,10))
+fig = plt.figure()
 
-plt.errorbar(data[:,0], data[:,1], yerr= data[:,2], color = "red", ecolor='red', fmt ='^')
-plt.errorbar(data_to_fit[:,0], data_to_fit[:,1], yerr= data_to_fit[:,2],color="black", ecolor='black', fmt = 's' )
-plt.plot(data_to_fit[:,0], fitted_y,  color = "green", linestyle='--', label ='\u0394 5%')
-plt.plot(data[:,0], fitted_y_all, color = "blue", linestyle='--', label = 'all')
-plt.legend(loc= "upper left", fontsize =15)
-plt.xticks(fontsize=15)
-plt.yticks(fontsize=15)
+plt.errorbar(data[:,0], data[:,1], yerr= data[:,2], color = "red", ecolor='red', fmt ='^', markersize = 1)
+plt.errorbar(data_to_fit[:,0], data_to_fit[:,1], yerr= data_to_fit[:,2],color="black", ecolor='black', fmt = 's', markersize=1 )
+plt.plot(data_to_fit[:,0], fitted_y,  color = "green", linestyle='--', label ='\u0394 5%', linewidth = 0.6)
+plt.plot(data[:,0], fitted_y_all, color = "blue", linestyle='--', label = 'all', linewidth = 0.6)
+plt.legend(loc= "upper left")
+
 plt.show()
 
 ```
@@ -50,5 +49,9 @@ plt.show()
 ```{python}
 
 fig.savefig('fitted_input01.png', dpi=200)
+
+```
+
+```{python}
 
 ```
