@@ -66,6 +66,10 @@ class Calculator:
             return self._short_memory
 
     @property
+    def short_memory(self):
+        return self._short_memory
+
+    @property
     def memory(self):
         if self._memory is not None:
             return self._memory
@@ -84,36 +88,3 @@ class Calculator:
         """Prints memorized value."""
         print(f"Zapamiętana wartość: {self.memory}")
 
-
-if __name__ == '__main__':
-    b = None
-    calc = Calculator()
-
-    try:
-        b = calc.run('+', 1, 'a')
-    except CalculatorError as exc:
-        assert type(exc) == NotNumberArgument
-        assert b is None
-    try:
-        b = calc.run('^', 2, 3)
-    except CalculatorError as exc:
-        assert type(exc) == WrongOperation
-        assert b is None
-    try:
-        calc.in_memory()
-    except CalculatorError as exc:
-        assert type(exc) is EmptyMemory
-    else:
-        raise AssertionError
-    try:
-        b = calc.run('/', 2)
-    except CalculatorError as exc:
-        assert type(exc) == EmptyMemory
-        assert b is None
-    else:
-        raise AssertionError
-
-    try:
-        b = calc.run('/', 1, 0)
-    except CalculatorError as exc:
-        assert type(exc.__cause__) == ZeroDivisionError

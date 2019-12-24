@@ -1,6 +1,5 @@
 import tkinter as tk
 from functools import partial
-
 from lab_9.tools.calculator import Calculator
 
 
@@ -17,6 +16,16 @@ class CalculatorGUI(tk.Frame):
         self.screen.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
         self.bottom_pad = self.init_bottom_pad()
         self.bottom_pad.pack(side=tk.BOTTOM)
+
+        for number in range(1, 10):
+            master.bind(number, partial(self.update_var, number))
+
+        master.bind('<+>', partial(self.set_operator, '+'))
+        master.bind('<->', partial(self.set_operator, '-'))
+        master.bind('</>', partial(self.set_operator, '/'))
+        master.bind('<*>', partial(self.set_operator, '*'))
+        master.bind('<.>', partial(self.set_operator, '.'))
+        master.bind('<Enter>', self.calculate_result)
 
     def init_variables(self):
         self.variables['var_1'] = ''
@@ -35,22 +44,42 @@ class CalculatorGUI(tk.Frame):
             tk.Button(
                 num_pad, text=num, width=5,
                 command=partial(self.update_var, num)
-            ).grid(row=ii // 3, column=(2-ii) % 3)
-        ii += 1
+            ).grid(row=ii // 3, column=(2 - ii) % 3 + 1)
+
         tk.Button(
             num_pad, text='C', width=5,
             command=self.clear
-        ).grid(row=ii // 3, column=ii % 3)
-        ii += 1
+        ).grid(row=3, column=0)
+
         tk.Button(
             num_pad, text='0', width=5,
             command=partial(self.update_var, '0')
-        ).grid(row=ii // 3, column=ii % 3)
-        ii += 1
+        ).grid(row=3, column=1)
+
         tk.Button(
             num_pad, text='=', width=5,
             command=self.calculate_result
-        ).grid(row=ii // 3, column=ii % 3)
+        ).grid(row=3, column=3)
+
+        tk.Button(
+            num_pad, text='.', width=5,
+            command=partial(self.update_var, '.')
+        ).grid(row=3, column=2)
+
+        tk.Button(
+            num_pad, text='MC', width=5,
+            command=self.calculator.clean_memory
+        ).grid(row=0, column=0)
+
+        tk.Button(
+            num_pad, text='MR', width=5,
+            command=self.read_from_memory
+        ).grid(row=1, column=0)
+
+        tk.Button(
+            num_pad, text='M+', width=5,
+            command=self.save_to_memory
+        ).grid(row=2, column=0)
 
         # klawiatura operacji
         operation_pad = tk.Frame(bottom_pad)
@@ -79,7 +108,7 @@ class CalculatorGUI(tk.Frame):
             self.variables['var_2'] = ''
         self.update_screen()
 
-    def update_var(self, num):
+    def update_var(self, num, *args):
         state = self.state.get()
         if state:
             self.variables['var_1'] += str(num)
@@ -95,14 +124,28 @@ class CalculatorGUI(tk.Frame):
             self.state.set(not self.state.get())
             self.update_screen()
 
-    def calculate_result(self):
+    def calculate_result(self, *args):
         if self.variables['var_1'] and self.variables['var_2']:
-            var_1 = int(self.variables['var_1'])
-            var_2 = int(self.variables['var_2'])
+            var_1 = float(self.variables['var_1'])
+            var_2 = float(self.variables['var_2'])
             self.screen['text'] = self.calculator.run(
                 self.variables['operator'], var_1, var_2
             )
             self.init_variables()
+
+    def read_from_memory(self):
+        state = self.state.get()
+        if state:
+            self.variables['var_1'] = self.calculator.memory
+        else:
+            self.variables['var_2'] = self.calculator.memory
+
+        self.update_screen()
+
+    def save_to_memory(self):
+        self.calculator._short_memory = self.variables['var_2'] or self.variables['var_1'] or \
+                                        self.screen['text']
+        self.calculator.memorize()
 
 
 if __name__ == '__main__':
