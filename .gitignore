@@ -107,6 +107,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-
+#csv files from lab_10
+lab_10/tasks/523920_2017_03/*.csv
+lab_10/tasks/weather_data/*.csv
 
 
