@@ -36,3 +36,5 @@ if __name__ == '__main__':
         get_cities_woeid('Warszawa', 0.1)
     except Exception as exc:
         isinstance(exc, requests.exceptions.Timeout)
+
+
