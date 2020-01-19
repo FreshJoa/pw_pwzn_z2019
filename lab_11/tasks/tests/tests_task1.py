@@ -42,7 +42,6 @@ test_parameter_exception = [
 @pytest.mark.parametrize("operator, arg1, arg2, expected", test_parameter_ok)
 def test_run_ok_parameter(operator, arg1, arg2, expected, calculator):
     counting_result = calculator.run(operator, arg1, arg2)
-    print(f'{arg1}  {arg2}')
     assert counting_result == expected
 
 
